@@ -4,7 +4,7 @@
 
 /* Step 2 - Variables */
 // Declaring Fullname 
-let fullName = 'Justina Eguare';
+const fullName = 'Justina Eguare';
 // Declaring current year
 let currentYear = new Date().getFullYear();
 // Declaring the filepath
@@ -29,12 +29,19 @@ nameElement.innerHTML = `<strong>${fullName}</strong>`;
 yearElement.textContent = currentYear;
 // Profile Image
 imageElement.setAttribute('src', profilePicture);
-
-
+// Picture alt
+imageElement.setAttribute('alt', `Profile Image of ${fullName}`);
 
 /* Step 5 - Array */
+// Food Array
+const favoriteFood = ['Jollof Rice','Sharwama','Crispy chicken','Noodles with beef Suya'];
+// Display Favorite Food
+foodElement.innerHTML = favoriteFood;
+// Single Food
+// Push to Array
+singleFood = 'Banga soup';
 
-
+    favoriteFood.push('Banga Soup');
 
 
 
