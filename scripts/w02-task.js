@@ -19,7 +19,7 @@ const foodElement = document.getElementById('food');
 // 'year' Id selector 
 const yearElement = document.querySelector('#year');
 // 'image' id element 
-const imageElement = document.querySelector('src')
+const imageElement = document.querySelector('picture img');
 
 
 /* Step 4 - Adding Content */
