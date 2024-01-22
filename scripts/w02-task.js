@@ -6,7 +6,7 @@
 // Declaring Fullname 
 let fullName = 'Justina Eguare';
 // Declaring current year
-let currentDate = new Date('2024');
+let currentYear = new Date().getFullYear();
 // Declaring the filepath
 const profilePicture = 'images/justina.JPG';
 
@@ -23,7 +23,10 @@ const imageElement = document.querySelector('picture')
 
 
 /* Step 4 - Adding Content */
-
+// Name content
+nameElement.innerHTML = `<strong>${fullName}</strong>`;
+// Current Year Content
+yearElement.textContent = currentYear;
 
 
 
