@@ -19,7 +19,7 @@ const foodElement = document.getElementById('food');
 // 'year' Id selector 
 const yearElement = document.querySelector('#year');
 // 'image' id element 
-const imageElement = document.querySelector('picture')
+const imageElement = document.querySelector('src')
 
 
 /* Step 4 - Adding Content */
@@ -27,8 +27,8 @@ const imageElement = document.querySelector('picture')
 nameElement.innerHTML = `<strong>${fullName}</strong>`;
 // Current Year Content
 yearElement.textContent = currentYear;
-
-
+// Profile Image
+imageElement.setAttribute('src', profilePicture);
 
 
 
