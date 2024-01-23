@@ -38,10 +38,19 @@ const favoriteFood = ['Jollof Rice','Sharwama','Crispy chicken','Noodles with be
 // Display Favorite Food
 foodElement.innerHTML = favoriteFood;
 // Single Food
+const singleFood = 'Banga soup';
 // Push to Array
-singleFood = 'Banga soup';
-
-    favoriteFood.push('Banga Soup');
+favoriteFood.push(singleFood);
+// Append the new array values to show result. 
+foodElement.innerHTML += `<br>${favoriteFood}`;
+// Remove the first element from the array
+favoriteFood.shift();
+// Append the new array values again to show result.
+foodElement.innerHTML += `<br>${favoriteFood}`;
+// Remove the last element from the array
+favoriteFood.pop();
+// Append the new array values again to show result.
+foodElement.innerHTML += `<br>${favoriteFood}`;
 
 
 
