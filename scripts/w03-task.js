@@ -50,10 +50,10 @@ document.querySelector('#divideNumbers').addEventListener('click', () => {
   const divide = (number1, number2) => number1 / number2;
 
 /* Decision Structure */
-    const getTotalButton = document.getElementById('getTotal');
-    const subtotalInput = document.getElementById('subtotal');
-    const memberCheckbox = document.getElementById('member');
-    const totalSpan = document.getElementById('total');
+    const getTotalButton = document.querySelector('#getTotal');
+    const subtotalInput = document.querySelector('#subtotal');
+    const memberCheckbox = document.querySelector('#member');
+    const totalSpan = document.querySelector('#total');
 
     getTotalButton.addEventListener('click', () => {
         let subtotal = Number(subtotalInput.value);
@@ -65,15 +65,20 @@ document.querySelector('#divideNumbers').addEventListener('click', () => {
 
 /* ARRAY METHODS - Functional Programming */
 /* Output Source Array */
-    let numbersArray = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+let numbersArray = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+document.querySelector('#array').innerHTML = numbersArray;
 /* Output Odds Only Array */
-    const oddNumbers = array.filter(num => num % 2 !== 0);
-    document.querySelector('#odds').innerHTML = numbersArray.filter(number => number % 2 !== 0);
+let oddNumbers = numbersArray.filter(num => num % 2 !== 0);
+document.querySelector('#odds').innerHTML = numbersArray.filter(number => number % 2 !== 0);
 /* Output Evens Only Array */
-    const evenNumbers = array.filter(num => num % 2 === 0);
-    document.querySelector('#evens').innerHTML = numbersArray.filter(number => number % 2 === 0);
+let evenNumbers = numbersArray.filter(num => num % 2 === 0);
+document.querySelector('#evens').innerHTML = numbersArray.filter(number => number % 2 === 0);
 /* Output Sum of Org. Array */
-
+numbersArray.reduce((sum, number) => sum + number)
+document.querySelector('#sumOfArray').innerHTML = numbersArray.reduce((sum, number) => sum + number);
 /* Output Multiplied by 2 Array */
-
+numbersArray.map(number => number * 2)
+document.querySelector('#multiplied').innerHTML = numbersArray.map(number => number * 2);
 /* Output Sum of Multiplied by 2 Array */
+let multipliedSum = numbersArray.map(num => num * 2).reduce((acc, curr) => acc + curr, 0);
+document.querySelector('#sumOfMultiplied').innerHTML = multipliedSum;
