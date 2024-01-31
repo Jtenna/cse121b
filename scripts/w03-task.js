@@ -2,8 +2,6 @@
 
 /* FUNCTIONS */
 /* Function Definition - Add Numbers */
-document.querySelector('#addNumbers').addEventListener('click', addNumbers);
-
 function addNumbers () {
 let addNumber1 = Number(document.querySelector('#add1').value);
 let addNumber2 = Number(document.querySelector('#add2').value);
@@ -15,19 +13,21 @@ function add (number1, number2) {
     return number1 + number2;
 }
 
+document.querySelector('#addNumbers').addEventListener('click', addNumbers);
+
 /* Function Expression - Subtract Numbers */
-document.querySelector('#subtractNumbers').addEventListener('click', subtractNumbers);
-
-function  subtractNumbers () {
-let subtractNumber1 = Number(document.querySelector('#subtract1').value);
-let subtractNumber2 = Number(document.querySelector('#subtract2').value);
-
-document.querySelector('#difference').value = subtract(subtractNumber1, subtractNumber2);
+const subtractNumbers = function() {
+    let subtractNumber1 = Number(document.querySelector('#subtract1').value);
+    let subtractNumber2 = Number(document.querySelector('#subtract2').value);
+    
+    document.querySelector('#difference').value = subtract(subtractNumber1, subtractNumber2);
 }
-
-function subtract (number1, number2) {
+    
+    function subtract(number1, number2) {
     return number1 - number2;
-}
+    }
+    
+document.querySelector('#subtractNumbers').addEventListener('click', subtractNumbers);
 
 /* Arrow Function - Multiply Numbers */
 document.querySelector('#multiplyNumbers').addEventListener('click', () => {
