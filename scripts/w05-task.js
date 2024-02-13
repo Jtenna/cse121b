@@ -8,26 +8,60 @@ let templeList = [];
 const displayTemples = (temples) => {
     temples.forEach((temple) => {
       const article = document.createElement('article');
+
       const h3 = document.createElement('h3');
       h3.textContent = temple.templeName;
+
       const img = document.createElement('img');
       img.src = temple.imageUrl;
       img.alt = temple.location;
+
       article.appendChild(h3);
+
       article.appendChild(img);
+
       templesElement.appendChild(article);
-      // Add article to the DOM or do something else with it
     });
   };
 /* async getTemples Function using fetch()*/
+const getTemples = async () => {
 
+      const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
+    
+      const templeList = await response.json();
+      displayTemples(templeList);
+    };
 
-/* reset Function */
-
+        /* reset Function */
+      const reset = () => {
+        templesElement.innerHTML = '';
+      };
 
 /* filterTemples Function */
+const filterTemples = (temples) => {
+  reset();
 
+  const filter = document.querySelector('#filtered').value;
+  switch (filter) {
+    case 'utah':
+      displayTemples(temples.filter((temple) => temple.location.includes('Utah')));
+      break;
+    case 'nonutah':
+      displayTemples(temples.filter((temple) => !temple.location.includes('Utah')));
+      break;
+    case 'older':
+      displayTemples(temples.filter((temple) => new Date(temple.dedicated) < new Date(1950, 0, 1)));
+      break;
+    case 'all':
+      displayTemples(temples);
+      break;
+    default:
+      displayTemples(temples);
+  }
+};
 
 getTemples();
+// console.log(templeList)
 
 /* Event Listener */
+document.querySelector("#filtered").addEventListener("change", () => { filterTemples(templeList) });
